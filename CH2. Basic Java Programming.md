@@ -326,7 +326,7 @@ line = input.nextLine();					// line에 키보드 입력 받기
 System.out.println(line);
 ```
 
-- `Scanner.nextline()`은 `string`을 입력받아 반환한다.
+- `Scanner.nextLine()`은 `string`을 입력받아 반환한다.
 - 한 줄의 문자열을 읽는다.
 
 
