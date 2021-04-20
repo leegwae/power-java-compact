@@ -326,6 +326,6 @@ import java.util.ArrayList;
 ### ArrayList 생성하기
 
 ```java
-ArrayList<String> list = new ArrayList<>();
+ArrayList<String> list = new ArrayList<String>();
 ```
 

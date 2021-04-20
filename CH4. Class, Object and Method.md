@@ -390,5 +390,5 @@ public class FrameTest {
 
 - `setSize(가로, 세로)`: 윈도우 크기
 - `setLocation(x, y)`: 위치 정하기
-- `setVisibile(bool)`: 보일지 말지
+- `setVisible(bool)`: 보일지 말지
 
