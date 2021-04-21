@@ -13,7 +13,7 @@ class StaticTest{
     static int count = 0;
 }
 
-public class MainPrograrm(String args[]){
+public class mainPrograrm(String args[]){
     StaticTest st = new StaticTest();
     System.out.println(st.count);
     System.out.println(StaticTest.count);
@@ -121,7 +121,7 @@ class Album{
 }
 
 class Test{
-    public static void Main(String[] args){
+    public static void main(String[] args){
         Album[] albums;							// 배열 참조형 변수 선언
         albums = new Album[5];					// 배열 객체 생성하고 변수에 할당
         

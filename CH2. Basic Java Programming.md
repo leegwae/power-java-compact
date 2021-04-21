@@ -18,7 +18,7 @@ public class Hello {
 
 
 
-### Main 메서드
+### main 메서드
 
 ```java
 public static void main(String[] args){
