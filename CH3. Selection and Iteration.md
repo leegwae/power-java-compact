@@ -252,7 +252,7 @@ String[] colors = {"blue", "yellow", "purple"};
 ### for-each 루프
 
 ```java
-for (변수 : 배열){
+for (자료형 변수 : 배열){
     
 }
 ```

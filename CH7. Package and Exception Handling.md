@@ -398,7 +398,7 @@ double d = Double.ParseDouble("3.141592");
 
 ```java
 Integer box;
-box = 10;	// boxing: 정수를 Integer 객체로 포장
+box = 10;						// boxing: 정수를 Integer 객체로 포장
 System.out.println(box + 1);	// unboxing: box를 정수로 변환
 ```
 
@@ -412,12 +412,12 @@ System.out.println(box + 1);	// unboxing: box를 정수로 변환
 | --------------------- | --------- | ------------------------------------------------------------ |
 | `charAt(int index)`   | `char`    | `index`의 요소를 `char`형으로 반환                           |
 | `compareTo(String s)` | `int`     | 문자열을 비교하여 앞에 있으면 -1, 같으면 0, 뒤에 있으면 1을 반환한다. |
-| `conact(String str)`  |           | 주어진 문자열을 붙인다.                                      |
+| `concat(String str)`  |           | 주어진 문자열을 붙여 새로운 객체를 반환한다.                 |
 | `equlas(Object obj)`  | `boolean` | 피연산자 `obj`과 문자열을 비교한다.                          |
 | `isEmpty()`           | `boolean` | `length()`가 0이면 `false`를 반환한다.                       |
 | `length()`            | `int`     | 문자열의 길이를 반환한다.                                    |
-| `toLowerCase()`       |           | 문자열의 모든 문자들을 소문자로 바꾼다.                      |
-| `toUpperCase()`       |           | 문자열의 모든 문자들을 대문자로 바꾼다.                      |
+| `toLowerCase()`       |           | 문자열의 모든 문자들을 소문자로 바꿔 새로운 객체를 반환한다. |
+| `toUpperCase()`       |           | 문자열의 모든 문자들을 대문자로 바꿔 새로운 객체를 반환한다. |
 
 
 

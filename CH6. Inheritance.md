@@ -1,6 +1,6 @@
 # CH6. Inheritance
 
-# 01 상속
+# 6.1 상속
 
 - 부모 클래스의 멤버, 즉 필드와 메서드를 상속받을 수 있다.
 - `extends`: 부모 클래스를 확장하여 자식 클래스를 작성한다.
@@ -21,8 +21,8 @@ class Child extends Parent{
 
 ```java
 SportCar obj = new SportsCar();
-obj.speed = 10;		// 부모 클래스의 필드 사용
-obj.setSpeed(60);	// 부모 클래스의 메서드 사용
+obj.speed = 10;		// 부모 클래스로부터 상속받은 필드 사용
+obj.setSpeed(60);	// 부모 클래스로부터 상속받은 메서드 사용
 ```
 
 
@@ -46,7 +46,7 @@ obj.setSpeed(60);	// 부모 클래스의 메서드 사용
 
 
 
-#  02 접근 제어 지정자
+#  6.2 접근 제어 지정자
 
 | 클래스\멤버                 | public | protected | default | private |
 | --------------------------- | ------ | --------- | ------- | ------- |
@@ -61,7 +61,7 @@ obj.setSpeed(60);	// 부모 클래스의 메서드 사용
 
 
 
-# 03 상속과 생성자
+# 6.3 상속과 생성자
 
 - 서브 클래스의 객체가 생성될 때, 서브 클래스의 생성자만 호출되는가, 아니면 수퍼 클래스의 생성자도 호출되는가?
   - <u>먼저 부모 클래스의 생성자가 호출된 후, 자식 클래스의 생성자가 호출된다.</u>
@@ -98,7 +98,7 @@ public class Test {
 
 
 
-# 04 메서드 재정의(메서드 오버라이딩)
+# 6.4 메서드 재정의(메서드 오버라이딩)
 
 - 메서드 재정의(method overriding): 자식 클래스가 필요에 따라 상속된 메서드들을 다시 정의하는 것 
 - <u>**재정의한 메서드의 이름, 반환형, 매개변수의 개수와 데이터 타입이 부모의 메서드와 일치해야한다**</u>.
@@ -106,25 +106,34 @@ public class Test {
 - `@Override` annotation: 오버라이딩이라는 것을 명시적으로 표현할 수 있다.
 
 ```java
-class Parent{
-    public void eat(){
-        System.out.println("In the Parent Method...");
-    }
+class Animal{
+	public void print(String speak) {
+		System.out.println("Animal: "+ speak);
+	}
 }
 
-class Child {
-    @Override
-    public void eat() {
-        System.out.println("In the Child Method...");
-    }
+class Lion extends Animal{
+	@Override
+	public void print(String speak) {
+        super.print("크왕");
+		System.out.println("Lion: "+speak);
+	}
+}
+public class LionTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Lion lion = new Lion();
+		lion.print("와앙");
+	}
+
 }
 
-class Test{
-    public static void main(String[] args){
-        Child child = new Child();
-        child.eat()			// In the Child Method...
-    }
-}
+```
+
+```
+Animal: 크왕
+Lion: 와앙
 ```
 
 
@@ -145,7 +154,7 @@ class Child{
 
 
 
-# 05 추상 클래스
+# 6.5 추상 클래스
 
 - 추상 클래스(abstract class): <u>몸체가 구현되지 않은 메서드</u>를 가지고 있는 클래스
 
@@ -200,7 +209,7 @@ public class AbstractTest {
 
 
 
-# 06 다형성
+# 6.6 다형성
 
 - **다형성(polymorphism)**은 객체들의 타입이 다르면 똑같은 메시지가 전달되더라도 서로 다른 동작을 하는 것을 뜻한다.
 - 오버라이딩(메서드 재정의)은 **동적 바인딩**을 한다.
@@ -235,7 +244,7 @@ public class ShapeTest{
 
 ## 오버라이딩된 메서드의 동적 바인딩
 
-- **동적 바인딩(dynamic binding)**: 부모 클래스의 참조 변수를 통해 **오버라이딩된 메서드를 호출하면**, 자식 클래스의 메서드가 호출된다. 오버라이딩은 런타임(실행 시간)에 메서드의 성격이 결정되기 때문이다.
+- **동적 바인딩(dynamic binding)**: 부모 클래스 참조 변수를 통해 **오버라이딩된 메서드를 호출하면**, 자식 클래스의 메서드가 호출된다. 오버라이딩은 런타임(실행 시간)에 메서드의 성격이 결정되기 때문이다.
 
 ```java
 class Shape{
@@ -251,7 +260,6 @@ class Shape{
 
 class Circle extends Shape{
 	int x;
-	int a;
 	
 	public Circle() {
 		x = 2;
@@ -379,13 +387,16 @@ class Circle implements Drawable{
     int radius;
     
     public void draw() {
-		system.out.println("Circle Draw...");
+		System.out.println("Circle Draw...");
     }
 }
 
-public class TestInterface{
- 	Drawable obj = new Cricle();
-    obj.draw();
+public class InterfaceTest{
+	static public void main(String[] args) {
+	 	Drawable obj = new Circle();
+	    obj.draw();
+	}
+
 }
 ```
 
@@ -423,7 +434,7 @@ interface Printable{
 interface Drawable{
     void draw();
 }
-public class Circle extends Shape implements Printable. Drawable{
+public class Circle extends Shape implements Printable, Drawable{
     public void print(){
         System.out.println("Circle Print...");
     }
