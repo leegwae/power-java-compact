@@ -41,7 +41,7 @@
 
 ### 컨테이너의 종류
 
-- 최상위 컨테인: 다른 컨테이너에 포함될 수 없는 컨테이너
+- 최상위 컨테이너: 다른 컨테이너에 포함될 수 없는 컨테이너
   - `JFrame`
   - `JDialog`
   - `JApplet`
@@ -67,7 +67,6 @@ public class MyFrame extends JFrame{
     public MyFrame(){
         setSize(300, 200);
         setTitle("MyFrame");
-        setVisible(true);
         SetDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         setLayout(new FlowLayout());
@@ -87,7 +86,7 @@ public class MyFrame extends JFrame{
 ### 8.3.2 JFrame 클래스
 
 - 컨테이너는 컴포넌트들을 트리 형태로 저장한다. 최상위 컨테이너는 이 트리의 루트 노드가 된다.
-- 최상위 컨테이너는 내부에 contnt pane을 가지고 있다. 여기에 화면에 보이는 컴포넌트를 저장한다.
+- 최상위 컨테이너는 내부에 content pane을 가지고 있다. 여기에 화면에 보이는 컴포넌트를 저장한다.
 - 최상위 컨테이너에는 메뉴바를 추가할 수 있다.
 
 
@@ -128,7 +127,8 @@ add(b5, BorderLayout.CENTER);	// 중앙
 
 ### 8.4.2 FlowLayout
 
-- 디폴트 배치 관리자: 왼쪽에서 오른쪽으로 배치하고 자리 없으면 다음줄로 넘어감
+- 디폴트 배치 관리자
+- 왼쪽에서 오른쪽으로 배치하고 자리 없으면 다음줄로 넘어감
 
 ```java
 setLayout(new FlowLayout());
@@ -160,8 +160,6 @@ for (int i = 0; i < 5; i++){
 - 카드가 겹쳐 쌓여있는 형태
 
 ```java
-package Week10;
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -281,7 +279,7 @@ label.setText("안녕!");
 
 
 ```java
-textField = new JTextFIeld(20);
+textField = new JTextField(20);
 textField.setEditable(fasle);	// 사용자가 편집 못하도록
 ```
 

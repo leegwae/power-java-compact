@@ -319,7 +319,7 @@ panel.setFocusable(true);
 
 ```java
 // 프레임 선택 후 엔터 누를 때마다 버튼에 난수가 생김
-    import javax.swing.*;
+import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
@@ -400,7 +400,7 @@ public class CarGame extends JFrame {
 
 		panel.add(button);
 		panel.requestFocus();
-		panel.setVisible(true);
+		panel.setFocusable(true);
 		
 		panel.addKeyListener(new KeyListener(){
 			public void keyPressed(KeyEvent e) {
@@ -483,7 +483,6 @@ class KeyFrame extends JFrame implements KeyListener {
 public class KeyTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		KeyFrame f = new KeyFrame();
 	}
 
